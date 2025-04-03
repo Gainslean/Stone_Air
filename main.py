@@ -15,7 +15,7 @@ async def stone():
                 async with session.get(url) as response:
                     if response.status == 200:
                         data = await response.json()
-                        a = int(data["tokenQualified"])
+                        a = int(float(data["tokenQualified"]))
                         print(f"Кошелек {wallets} = {a}")
                         if a > 0:
                             info.append(a)
